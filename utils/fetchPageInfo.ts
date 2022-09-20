@@ -1,7 +1,14 @@
 import { PageInfo } from "../typings";
 
 export const fetchPageInfo = async() => {
-    const res = await fetch(`${process.env.URL}/api/getPageInfo`);
+    const res = await fetch(`${process.env.URL}/api/getPageInfo`,
+    {
+      method: "GET",
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'User-Agent': '*',
+      },
+    });
 
     const data = await res.json()
     const pageInfo: PageInfo = data.pageInfo;

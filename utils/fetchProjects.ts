@@ -1,7 +1,14 @@
 import { Project } from "../typings";
 
 export const fetchProjects = async() => {
-    const res = await fetch(`${process.env.URL}/api/getProjects`);
+    const res = await fetch(`${process.env.URL}/api/getProjects`,
+    {
+      method: "GET",
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'User-Agent': '*',
+      },
+    });
 
     const data = await res.json()
     const projects: Project[] = data.projects;

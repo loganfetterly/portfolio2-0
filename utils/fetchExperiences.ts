@@ -1,7 +1,7 @@
 import { Experience } from "../typings";
 
 export const fetchExperiences = async() => {
-    const res = await fetch(`http://${process.env.URL}/api/getExperience`,
+    const res = await fetch(`${process.env.URL}/api/getExperience`,
     {
       method: "GET",
       headers: {

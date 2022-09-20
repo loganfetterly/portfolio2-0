@@ -33,7 +33,7 @@ function Projects({projects}: Props) {
                         once: true
                     }}
                     src={urlFor(project.image).url()}
-                    className='h-[125px] w-[125px] rounded-full'
+                    className='h-[125px] w-[125px] rounded-full object-cover mb-10'
                     />
 
                     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
@@ -55,7 +55,7 @@ function Projects({projects}: Props) {
                             ))}
                         </div> 
 
-                        <p className='text-lg text-center md:text-left'>
+                        <p className='text-lg text-center md:text-left mb-10'>
                             {project?.summary}
                         </p>
                     </div>

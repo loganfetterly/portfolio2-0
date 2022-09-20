@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Experience } from '../typings'
 import { urlFor } from '../sanity'
-import { url } from 'inspector'
 
 type Props = {
     experience: Experience
@@ -23,7 +22,7 @@ function ExperienceCard({ experience }: Props) {
             opacity: 1, y:0
         }}
         viewport={{ once: true }}
-        className='w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center bg-white'
+        className='w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-scale-down object-center bg-white'
         src={urlFor(experience?.companyImage).url()}
         alt=""
         ></motion.img>
@@ -36,7 +35,7 @@ function ExperienceCard({ experience }: Props) {
                 {experience.technologies.map(technology => (
                     <img
                     key={technology._id}
-                    className='h-10 w-10 rounded-full'
+                    className='h-10 w-10 rounded-full object-cover'
                     src={urlFor(technology.image).url()}
                     />
                 ))}

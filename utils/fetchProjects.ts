@@ -1,7 +1,7 @@
 import { Project } from "../typings";
 
 export const fetchProjects = async() => {
-    const res = await fetch(`${process.env.local ? "" : "https://"}${process.env.local == "1" ? process.env.NEXT_PUBLIC_BASE_URL : process.env.NEXT_PUBLIC_VERCEL_URL}/api/getProjects`,
+    const res = await fetch(`${process.env.local == "1" ? "" : "https://"}${process.env.local == "1" ? process.env.NEXT_PUBLIC_BASE_URL : process.env.NEXT_PUBLIC_VERCEL_URL}/api/getProjects`,
     {
       method: "GET",
       headers: {

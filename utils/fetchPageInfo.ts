@@ -1,7 +1,7 @@
 import { PageInfo } from "../typings";
 
 export const fetchPageInfo = async() => {
-    const res = await fetch(`${process.env.local ? "" : "https://"}${process.env.local ? process.env.NEXT_PUBLIC_BASE_URL : process.env.NEXT_PUBLIC_VERCEL_URL}/api/getPageInfo`,
+    const res = await fetch(`${process.env.local ? "" : "https://"}${process.env.local == "1" ? process.env.NEXT_PUBLIC_BASE_URL : process.env.NEXT_PUBLIC_VERCEL_URL}/api/getPageInfo`,
     {
       method: "GET",
       headers: {
